@@ -1,0 +1,106 @@
+﻿<Page x:Class="UI.HospitalManage_searchPatient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="HospitalManage_searchPatient" Background="White">
+
+    <Grid>
+        <GroupBox Header="筛选：" HorizontalAlignment="Left" Height="170"  VerticalAlignment="Top" Width="1088"  >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="76*"/>
+                    <ColumnDefinition Width="78*"/>
+                    <ColumnDefinition Width="132*"/>
+                    <ColumnDefinition Width="69*"/>
+                    <ColumnDefinition Width="Auto" MinWidth="94.4"/>
+                    <ColumnDefinition Width="Auto" MinWidth="71.2"/>
+                    <ColumnDefinition Width="Auto" MinWidth="175.2"/>
+                    <ColumnDefinition Width="143.2"/>
+                    <ColumnDefinition Width="74.4"/>
+                    <ColumnDefinition Width="Auto" MinWidth="122.4"/>
+                    <ColumnDefinition Width="Auto" MinWidth="40"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Grid.Column="0" Grid.Row="0" Margin="15,15,0,0"
+               Width="Auto" Height="30" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Name="Label1">病人卡号：</Label>
+                <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"
+               Width="Auto" Height="30" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Name="Label12">科 室：</Label>
+                <Label Grid.Column="3" Grid.Row="0" Margin="0,15,0,0"
+               Width="Auto" Height="30" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Name="Label13">病人姓名：</Label>
+                <Label Grid.Column="3" Grid.Row="1" Margin="0,15,0,0"
+               Width="Auto" Height="30" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Name="Label14">病房号：</Label>
+                <Label Grid.Column="7" Grid.Row="0" Margin="0,15,0,0"
+               Width="Auto" Height="30" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Name="Label15">楼 层：</Label>
+                <TextBox Grid.Column="1" Grid.Row="0" Margin="0,20,5,20" VerticalAlignment="Stretch"
+                     Name="textBox1"/>
+
+                <TextBox Grid.Column="4" Grid.Row="0" Margin="0,20,5,20" VerticalAlignment="Stretch"
+                     Name="textBox3"/>
+                <TextBox Grid.Column="4" Grid.Row="1" Margin="0,20,5,20" VerticalAlignment="Stretch"
+                     Name="textBox4"/>
+                <TextBox Grid.Column="7" Grid.Row="0" Margin="50,20,5,20" VerticalAlignment="Stretch"
+                     Name="textBox5"/>
+                <ComboBox Name="ComboBox1" Margin="0,20,5,20" Grid.Row="1"
+                      Grid.Column="1" VerticalAlignment="Top">
+                </ComboBox>
+                <Button Grid.Column="2" Grid.Row="0" Margin="0,20,80,20" HorizontalAlignment="Stretch" Click="Button1_Click"
+                    Name="Button1">查看</Button>
+                <Button Grid.Column="2" Grid.Row="1" Margin="0,20,80,20" HorizontalAlignment="Stretch" Click="Button2_Click"
+                    Name="Button2">查看</Button>
+                <Button Grid.Column="5" Grid.Row="0" Margin="0,20,20,20" HorizontalAlignment="Stretch" Click="Button4_Click"
+                    Name="Button4">查看</Button>
+                <Button Grid.Column="5" Grid.Row="1" Margin="0,20,20,20" HorizontalAlignment="Stretch" Click="Button3_Click"
+                    Name="Button3">查看</Button>
+                <Button Grid.Column="8" Grid.Row="0" Margin="0,20,20,20" HorizontalAlignment="Stretch" Click="Button5_Click"
+                    Name="Button5">查看</Button>
+                <Button Grid.Column="7" Grid.Row="1" Margin="100,20,20,20" HorizontalAlignment="Stretch" Click="Button6_Click"
+                    Name="Button6" Grid.ColumnSpan="2">查看所有</Button>
+                <Border Grid.Row="2" Grid.Column="0" 
+                    BorderThickness="8" >
+                    <TextBlock Name="resultTextBlock" Text="查看结果" 
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+
+                </Border>
+
+
+
+
+
+            </Grid>
+        </GroupBox>
+        <ListView Width="900" Margin="29,170,159,37" Name="listView1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="病人卡号" Width="100" DisplayMemberBinding="{Binding Path=c1}"/>
+                    <GridViewColumn Header="姓名" Width="100"     DisplayMemberBinding="{Binding Path=c2}"/>
+                    <GridViewColumn Header="科室" Width="100"     DisplayMemberBinding="{Binding Path=c3}"/>
+                    <GridViewColumn Header="病房号" Width="100"   DisplayMemberBinding="{Binding Path=c4}"/>
+                    <GridViewColumn Header="床位" Width="100"     DisplayMemberBinding="{Binding Path=c5}"/>
+                    <GridViewColumn Header="预交费" Width="100"   DisplayMemberBinding="{Binding Path=c6}"/>
+                    <GridViewColumn Header="病情描述" Width="100" DisplayMemberBinding="{Binding Path=c7}"/>
+                    <GridViewColumn Header="药物禁忌" Width="100" DisplayMemberBinding="{Binding Path=c8}"/>
+                    <GridViewColumn Header="登记时间" Width="100" DisplayMemberBinding="{Binding Path=c9}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>

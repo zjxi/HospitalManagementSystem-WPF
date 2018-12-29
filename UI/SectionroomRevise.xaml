@@ -1,0 +1,30 @@
+﻿<Window x:Class="UI.SectionroomRevise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="SectionroomRevise" Height="450" Width="550">
+    <Grid>
+        <ListView Name="listView1" HorizontalAlignment="Left" Height="225" VerticalAlignment="Top" Width="468" Margin="32,10,0,0"
+                  SelectionChanged="ListView1_SelectionChanged">
+            <ListView.View>
+                <GridView x:Name="girdView1">
+                    <GridViewColumn x:Name="col1" Header="科室"     Width="135" DisplayMemberBinding="{Binding Path=sec}"/>
+                    <GridViewColumn x:Name="col2" Header="科室地址" Width="185" DisplayMemberBinding="{Binding Path=addr}"/>
+                    <GridViewColumn x:Name="col3" Header="挂号费"   Width="135" DisplayMemberBinding="{Binding Path=price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="科别名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,256,0,0" RenderTransformOrigin="0.181,0.609"/>
+        <TextBox Name="txtSname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="127,258,0,0"/>
+        <Label  Content="科室地址：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,301,0,0"/>
+        <TextBox Name="txtSaddr" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="127,305,0,0"/>
+        <Label Content="挂  号  费：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,345,0,0"/>
+        <TextBox Name="txtSprice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.019,8.046" Margin="127,349,0,0"/>
+        <Button Content="修改" Name="btnRevise" Click="BtnRevise_Click" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="338,258,0,0" Height="41"/>
+        <Button Content="删除" Name="btnDelete" Click="BtnDelete_Click" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="339,331,0,0" Height="41"/>
+       
+    </Grid>
+</Window>

@@ -1,0 +1,72 @@
+﻿<Page x:Class="UI.ClinicManage_register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="ClinicManage_register" Background="White">
+
+    <Grid>
+        <GroupBox Name="groupBox1" Header="挂号信息" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="967" Margin="61,42,0,0">
+            <CheckBox Name="printList" Content="打印挂号单" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,20,0,0"/>
+        </GroupBox>
+        <GroupBox Name="groupBox2" Header="病人信息" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="967" Margin="61,295,0,0">
+            <Label Content="姓名：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,21,0,0" RenderTransformOrigin="0.4,-0.16"/>
+        </GroupBox>
+        <Button Name="btnRegister" Click="BtnRegister_Click" Content="挂号" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Margin="225,532,0,0" Height="35"/>
+        <Button Name="btnClear" Click="BtnClear_Click" Content="清空" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="99" Margin="612,0,0,28" RenderTransformOrigin="1.116,2.111" Height="35"/>
+        <Label Content="挂单号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159,109,0,0" RenderTransformOrigin="0.8,0.48"/>
+        <TextBox Name="txtRid" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="133" Margin="222,109,0,0"/>
+        <Label Content="号类：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="10.3,4.76" Margin="429,109,0,0"/>
+        <ComboBox Name="cboIdType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="480,109,0,0">
+            <ComboBoxItem Content="普通号"/>
+            <ComboBoxItem Content="VIP号"/>
+        </ComboBox>
+        <Label Content="医师：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,107,0,0"/>
+        <ComboBox Name="cboDoctor" SelectionChanged="CboDoctor_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.792,0.762" Margin="751,109,0,0"/>
+        <Label Content="卡号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159,163,0,0"/>
+        <TextBox Name="txtKid" TextChanged="TxtKid_TextChanged" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" Margin="222,163,0,0"/>
+        <Label Content="科室：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429,167,0,0"/>
+        <ComboBox Name="cboSectionRoom" SelectionChanged="CboSectionRoom_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="480,167,0,0"/>
+        <Label Content="挂号费用：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="681,163,0,0"/>
+        <TextBox Name="txtGuaHaoFei" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Margin="751,165,0,0"/>
+        <Label Content="其他费用：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159,223,0,0"/>
+        <TextBox Name="txtOtherFei" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" Margin="225,223,0,0"/>
+        <Label Content="挂号日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="412,223,0,0"/>
+        <DatePicker Name="dtpRegisterTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="482,224,0,0" Width="133"/>
+        <Label Content="就诊日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="681,224,0,0"/>
+        <DatePicker Name="dtpSeeDoctorTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="751,225,0,0" Width="132"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Margin="225,334,0,0"/>
+        <Label Content="身份证号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,334,0,0"/>
+        <TextBox Name="txtIdcardNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" Margin="480,334,0,0" />
+        <Label Content="年龄：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,330,0,0"/>
+        <TextBox Name="txtAge" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" Margin="745,334,0,0"/>
+        <Label Content="地址：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="165,384,0,0" RenderTransformOrigin="0.65,0.48"/>
+        <TextBox Name="txtAddress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Margin="225,386,0,0"/>
+        <Label Content="电话：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429,386,0,0"/>
+        <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" Margin="482,386,0,0"/>
+        <Label Content="民族：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,384,0,0"/>
+        <TextBox Name="cboNation" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="138" Margin="745,386,0,0"/>
+        <Label Content="文化：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="165,441,0,0"/>
+        <TextBox Name="cboCultrue"  HorizontalAlignment="Left" Height="23"  Text="" VerticalAlignment="Top" Width="130" Margin="225,441,0,0"/>
+        <Label Content="职业：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429,441,0,0"/>
+        <TextBox Name="cboWork" HorizontalAlignment="Left" Height="23"  Text="" VerticalAlignment="Top" Width="131" Margin="482,441,0,0"/>
+        <Label Content="邮政编码：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="676,439,0,0"/>
+        <TextBox Name="txtPostcode" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" Margin="745,441,0,0"/>
+        <Label Content="婚姻状况：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,488,0,0"/>
+        <Label Content="性别：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429,488,0,0"/>
+        <Label Content="出生日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="676,488,0,0"/>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Name="rdoMarriageYes" Content="已婚" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225,494,0,0"/>
+            <RadioButton Name="rdoMarriageNo" Content="未婚" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,494,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Name="rdoBoy" Content="男" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="494,494,0,0"/>
+            <RadioButton Name="rdoGirl" Content="女" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,494,0,0"/>
+        </StackPanel>
+        <DatePicker Name="dtpBirthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="745,489,0,0" Width="138"/>
+
+    </Grid>
+</Page>

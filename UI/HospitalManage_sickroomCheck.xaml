@@ -1,0 +1,69 @@
+﻿<Page x:Class="UI.HospitalManage_sickroomCheck"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      xmlns:WinFormIntegration="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      xmlns:WinFormControls="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="HospitalManage_sickroomCheck" Background="White">
+
+    <Grid>
+        <Label Content="病房：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0"/>
+        <Image HorizontalAlignment="Left" Source="Images\empty.png" Height="47" VerticalAlignment="Top" Width="38" Margin="56,10,0,0"/>
+        <Label Content="空" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,10,0,0"/>
+        <Image HorizontalAlignment="Left" Source="Images\full.png" Height="44" VerticalAlignment="Top" Width="36" Margin="138,13,0,0" RenderTransformOrigin="0.5,0.5">
+
+        </Image>
+        <Label Content="满" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="179,0,0,560"/>
+        <Image HorizontalAlignment="Left" Source="Images\weixiu.png" Height="41" VerticalAlignment="Top" Width="39" Margin="215,11,0,0"/>
+        <Label Content="维修" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="259,11,0,0"/>
+        <ListView Name="listView1" HorizontalAlignment="Left" Height="302" 
+                  VerticalAlignment="Top" Width="1025" Margin="21,52,0,0" 
+                  SelectionChanged="ListView1_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="病房号"   Width="180"  DisplayMemberBinding="{Binding Path=c2}"/>
+                    <GridViewColumn Header="类型"     Width="180"  DisplayMemberBinding="{Binding Path=c3}"/>
+                    <GridViewColumn Header="科别"     Width="180"  DisplayMemberBinding="{Binding Path=c4}"/>
+                    <GridViewColumn Header="价格"     Width="180"  DisplayMemberBinding="{Binding Path=c5}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--<Grid>
+            <WindowsFormsHost Background="White" Height="297" HorizontalAlignment="Left" Margin="21,57,0,0" Name="windowsFormsHost1" VerticalAlignment="Top" Width="1025" >
+                <WinFormControls:ListView x:Name="listView1" SelectedIndexChanged="ListView1_SelectedIndexChanged">
+                  
+                </WinFormControls:ListView>
+            </WindowsFormsHost>
+
+            <WindowsFormsHost Background="White" Height="176" HorizontalAlignment="Left" Margin="21,409,0,0" Name="windowsFormsHost2" VerticalAlignment="Top" Width="1025">
+                <WinFormControls:ListView x:Name="listView2" >
+
+                </WinFormControls:ListView>
+            </WindowsFormsHost>
+        </Grid>-->
+        
+        <Label Content="病床：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.35,1.24" Margin="10,359,0,0"/>
+        <Image Source="Images\empty1.png" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="56" Margin="65,359,0,0"/>
+        <Label Content="空" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,371,0,0"/>
+        <Image Source="Images\weixiu1.png" HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="62" Margin="243,359,0,0"/>
+        <Label Content="维修" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,371,0,0" RenderTransformOrigin="1.059,0.28"/>
+        <Image Source="Images\full1.png" HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="53" Margin="153,359,0,0"/>
+        <Label Content="满" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.15,2.68" Margin="206,371,0,0"/>
+        <ListView Name="listView2" HorizontalAlignment="Left" Height="176" 
+                  VerticalAlignment="Top" Width="1025" Margin="21,409,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="病房号"   Width="180"  DisplayMemberBinding="{Binding Path=c1}"/>
+                    <GridViewColumn Header="病床号"   Width="180"  DisplayMemberBinding="{Binding Path=c2}"/>
+                    <GridViewColumn Header="病人卡号" Width="180"  DisplayMemberBinding="{Binding Path=c3}"/>
+                    <GridViewColumn Header="床位状态" Width="180"  DisplayMemberBinding="{Binding Path=c4}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

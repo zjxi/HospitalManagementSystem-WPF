@@ -1,0 +1,65 @@
+﻿<Page x:Class="UI.ClinicManage_medicalCard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="ClinicManage_medicalCard" Background="White">
+
+    <Grid>
+        <Label Content="姓名：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.9,1.88" Margin="60,72,0,0"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="129,76,0,0" RenderTransformOrigin="0.558,0.565"/>
+        <Label Content="地址：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,151,0,0"/>
+        <TextBox Name="txtAddress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="129,155,0,0"/>
+        <Label Content="文化：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,233,0,0"/>
+        <ComboBox Name="cboCulture" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="129,237,0,0">
+            <ComboBoxItem Content="大专"/>
+            <ComboBoxItem Content="中专"/>
+            <ComboBoxItem Content="高中"/>
+            <ComboBoxItem Content="本科"/>
+            <ComboBoxItem Content="硕士"/>
+            <ComboBoxItem Content="博士"/>
+            <ComboBoxItem Content="其他"/>
+        </ComboBox>
+        <Label Content="婚姻状况：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.95,5.52" Margin="60,326,0,0"/>
+        <Label Content="性别：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,72,0,0"/>
+        <RadioButton Name="rdoBoy" Content="男" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="451,78,0,0"/>
+        <RadioButton Name="rdoGirl" Content="女" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510,78,0,0"/>
+        <Label Content="电话：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,151,0,0"/>
+        <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="451,155,0,0"/>
+        <Label Content="职业：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,233,0,0"/>
+        <Label Content="出生日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,326,0,0"/>
+        <DatePicker Name="dtpBirthday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="451,330,0,0" Width="120"/>
+        <ComboBox Name="cboWork" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="451,237,0,0">
+            <ComboBoxItem Content="工人"/>
+            <ComboBoxItem Content="农民"/>
+            <ComboBoxItem Content="学生"/>
+            <ComboBoxItem Content="教师"/>
+            <ComboBoxItem Content="医生"/>
+            <ComboBoxItem Content="其他"/>
+        </ComboBox>
+        <Label Content="年龄：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="738,72,0,0"/>
+        <TextBox Name="txtAge" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="807,76,0,0"/>
+        <Label Content="民族：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.42" Margin="738,151,0,0"/>
+        <ComboBox Name="cboNation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="807,151,0,0">
+            <ComboBoxItem Content="汉族"/>
+            <ComboBoxItem Content="回族"/>
+            <ComboBoxItem Content="壮族"/>
+            <ComboBoxItem Content="朝鲜族"/>
+            <ComboBoxItem Content="维吾尔族"/>
+            <ComboBoxItem Content="其他"/>
+        </ComboBox>
+        <Label Content="邮政编码：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="738,233,0,0"/>
+        <TextBox Name="txtPostcode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="807,237,0,0"/>
+        <Label Content="身份证号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="738,326,0,0"/>
+        <TextBox Name="txtIdcardNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="807,330,0,0"/>
+        <Button Content="初始化" Name="btnSure" Click="BtnSure_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="574,436,0,0" Height="37"/>
+        <Button Content="注册" Name="btnCancel" Click="BtnCancel_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="246,436,0,0" Height="37"/>
+        <RadioButton Name="rdoMarriageYes" Content="已婚" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,330,0,0"/>
+        <RadioButton Name="rdoMarriageNo" Content="未婚" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="197,330,0,0"/>
+
+    </Grid>
+
+</Page>

@@ -1,0 +1,286 @@
+﻿<Page x:Class="UI.ClinicDoctor1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="595" d:DesignWidth="1360"
+      Title="ClinicDoctor1">
+
+    <Grid>
+        <TabControl BorderBrush="Transparent" BorderThickness="0">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="Width" Value="120"/>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="选病人">
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Images\tab1.png"/>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="46*"/>
+                        <ColumnDefinition Width="293*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="挂号单：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,45,0,0"/>
+                    <TextBox Name="txtRid" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Margin="145,45,0,0" Grid.ColumnSpan="2"/>
+                    <Label Content="挂号费：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,75,0,0"/>
+                    <TextBox Name="txtGuaDanFei" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86" Margin="145,75,0,0" Grid.ColumnSpan="2"/>
+                    <Label Content="挂号日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,105,0,0"/>
+                    <DatePicker Name="dtpRegisterTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,106,0,0" Width="193" Grid.ColumnSpan="2"/>
+                    <Label Content="卡号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,45,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtKId" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="171,45,0,0" Grid.Column="1"/>
+                    <Label Content="号类：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399,45,0,0" RenderTransformOrigin="0.848,0.4" Grid.Column="1"/>
+                    <TextBox Name="txtIdType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="450,45,0,0" RenderTransformOrigin="1.183,0.304" Grid.Column="1"/>
+                    <Label Content="其他费：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,75,0,0" RenderTransformOrigin="-0.379,0.52" Grid.Column="1"/>
+                    <TextBox Name="txtOtherFei" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="74" Margin="181,75,0,0" Grid.Column="1"/>
+                    <Label Content="科室：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="272,75,0,0" RenderTransformOrigin="0.786,0.32" Grid.Column="1"/>
+                    <TextBox Name="txtSectionRoom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="52" Margin="319,75,0,0" RenderTransformOrigin="1.115,0.565" Grid.Column="1"/>
+                    <Label Content="医师：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="399,75,0,0" RenderTransformOrigin="0.739,0.48" Grid.Column="1"/>
+                    <TextBox Name="txtDoctor" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="450,75,0,0" RenderTransformOrigin="1.25,0.304" Grid.Column="1"/>
+                    <Label Content="就诊日期：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,107,0,0" RenderTransformOrigin="1.029,0.4" Width="70" Grid.Column="1"/>
+                    <DatePicker Name="dtpSeeDoctorTime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="374,108,0,0" Width="196" Grid.Column="1"/>
+                    <Label Content="当前挂号病人：" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               RenderTransformOrigin="3.4,7.64" Margin="44,152,0,0"
+               FontFamily="黑体" FontSize="21" Grid.ColumnSpan="2"/>
+                    <ListView Height="350" Width="930" Margin="146,191,280,18"
+                  Name="lvwGuaHaoShow" SelectionChanged="LvwGuaHaoShow_SelectionChanged" Grid.ColumnSpan="2" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="挂单号"    Width="100" DisplayMemberBinding="{Binding Path=c1}"/>
+                                <GridViewColumn Header="卡号"      Width="100" DisplayMemberBinding="{Binding Path=c2}"/>
+                                <GridViewColumn Header="号类"      Width="100" DisplayMemberBinding="{Binding Path=c3}"/>
+                                <GridViewColumn Header="挂单费"    Width="100" DisplayMemberBinding="{Binding Path=c4}"/>
+                                <GridViewColumn Header="其他费"    Width="100" DisplayMemberBinding="{Binding Path=c5}"/>
+                                <GridViewColumn Header="科室"      Width="100" DisplayMemberBinding="{Binding Path=c6}"/>
+                                <GridViewColumn Header="医师"      Width="100" DisplayMemberBinding="{Binding Path=c7}"/>
+                                <GridViewColumn Header="挂号日期"  Width="100" DisplayMemberBinding="{Binding Path=c8}"/>
+                                <GridViewColumn Header="就诊日期"  Width="100" DisplayMemberBinding="{Binding Path=c9}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="写病历">
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Images\tab1.png"/>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="FontFamily" Value="黑体" />
+                            <Setter Property="FontSize" Value="14" />
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="66*"/>
+                        <ColumnDefinition Width="1291*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="【初步诊断】"  FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Grid.ColumnSpan="2"/>
+                    <TextBox Name="txtZhenduan" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="50.5,14,0,0" Grid.Column="1"/>
+                    <Button Name="btnImport" Content="导入病例" Click="BtnImport_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" RenderTransformOrigin="2.293,2.526" Margin="304.5,14,0,0" Height="23" Grid.Column="1"/>
+                    <Button Name="btnClear" Content="清空病例" Click="BtnClear_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="473.5,14,0,0" Height="24" RenderTransformOrigin="0.72,0.5" Grid.Column="1"/>
+                    <TreeView Name="treeView1" HorizontalAlignment="Left" Height="493"
+                        VerticalAlignment="Top" Width="220" Margin="16,54,0,0"
+                        SelectedItemChanged="TreeView1_SelectedItemChanged" Grid.ColumnSpan="2">
+                        <TreeView.Resources>
+                            <Style TargetType="TreeViewItem">
+                                <Setter Property="FontFamily" Value="方正行楷简体"/>
+                                <Setter Property="FontSize" Value="17"/>
+                            </Style>
+                        </TreeView.Resources>
+                    </TreeView>
+                    <Label Content="主诉" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="9.475,4.08" Margin="225.5,54,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtZhushu" HorizontalAlignment="Left" Height="79" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Margin="304.5,54,0,0" Grid.Column="1"/>
+                    <Label Content="既往史" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.6,7.04" Margin="225.5,157,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtJiwangshi" HorizontalAlignment="Left" Height="73" TextWrapping="Wrap"  VerticalAlignment="Top" Width="243" Margin="304.5,157,0,0" Grid.Column="1"/>
+                    <Label Content="个人史" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225.5,252,0,0" RenderTransformOrigin="0.543,0.4" Grid.Column="1"/>
+                    <TextBox Name="txtGerenshi" HorizontalAlignment="Left" Height="79" TextWrapping="Wrap"  VerticalAlignment="Top" Width="243" Margin="304.5,252,0,0" Grid.Column="1"/>
+                    <Label Content="体格检查" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213.5,341,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtTijian" HorizontalAlignment="Left" Height="71" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Margin="304.5,363,0,0" Grid.Column="1"/>
+                    <Label Content="治疗建议" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213.5,442,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtJianyi" HorizontalAlignment="Left" Height="84" TextWrapping="Wrap" VerticalAlignment="Top" Width="618" Margin="304.5,463,0,0" Grid.Column="1"/>
+                    <Label Content="现病史" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="653.5,54,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtXianbingshi" HorizontalAlignment="Left" Height="79" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="270" Margin="752.5,54,0,0" Grid.Column="1"/>
+                    <Label Content="过敏史" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="653.5,157,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtGuominshi" HorizontalAlignment="Left" Height="73" TextWrapping="Wrap"  VerticalAlignment="Top" Width="270" Margin="752.5,157,0,0" Grid.Column="1"/>
+                    <Label Content="家族史" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="653.5,252,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtJiatingshi" HorizontalAlignment="Left" Height="79" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Margin="752.5,252,0,0" Grid.Column="1"/>
+                    <Label Content="辅助检查" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="653.5,345,0,0" Grid.Column="1"/>
+                    <TextBox Name="txtFuzhu" HorizontalAlignment="Left" Height="71" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Margin="752.5,363,0,0" Grid.Column="1"/>
+                    <Button Content="提交" Name="button7" Click="Button7_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="984.5,500,0,0" Height="36" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="开中药">
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Images\tab1.png"/>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="360*"/>
+                        <ColumnDefinition Width="924*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="日期" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,31,0,0" Grid.ColumnSpan="2"/>
+                    <Label Content="病案号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140.2,30,0,0" RenderTransformOrigin="0.304,0.6" Grid.Column="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="191.2,31,0,0" Grid.Column="2"/>
+                    <Label Content="处方号" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.5,2.4" Margin="302.2,31,0,0" Grid.Column="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="93" Margin="353.2,30,0,0" Grid.ColumnSpan="2" Grid.Column="2"/>
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11.2,30,0,0" Width="107" Grid.Column="2"/>
+                    <Label Content="姓名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,75,0,0" Grid.ColumnSpan="2"/>
+                    <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107" Margin="11.2,75,0,0" Grid.Column="2"/>
+                    <Label Content="年龄" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140.2,109,0,0" Grid.Column="2"/>
+                    <TextBox Name="txtAge" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69" Margin="191.2,109,0,0" Grid.Column="2"/>
+                    <Label Content="住址" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,139,0,0" RenderTransformOrigin="0.382,1.48" Grid.ColumnSpan="2"/>
+                    <TextBox Name="txtAddress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Margin="11.2,139,0,0" Grid.Column="2"/>
+                    <Label Content="服药天数" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="211.2,137,0,0" Grid.Column="2"/>
+                    <TextBox Name="txtCountDay" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113" Margin="274.2,139,0,0" Grid.ColumnSpan="2" Grid.Column="2"/>
+                    <Label Content="性别" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,109,0,0" Grid.ColumnSpan="2"/>
+                    <TextBox Name="txtSex" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86" Margin="11.2,109,0,0" Grid.Column="2"/>
+                    <Label Content="初复诊" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140.2,71,0,0" Grid.Column="2"/>
+                    <ComboBox Name="cboCFzhen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="191.2,75,0,0" Grid.Column="2">
+                        <ComboBoxItem Content="初诊"/>
+                        <ComboBoxItem Content="复诊"/>
+                    </ComboBox>
+                    <Button Content="提交" Name="btnOk" Click="BtnOk_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="89.2,181,0,0" Grid.Column="2"/>
+                    <Button Content="删除" Name="btnDel" Click="BtnDel_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="236.2,181,0,0" RenderTransformOrigin="0.84,0.368" Grid.Column="2"/>
+                    <Label Content="关键词搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="164,30,0,0" Grid.Column="3"/>
+                    <TextBox Name="txtSelect" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Margin="240,31,0,0" Grid.Column="3"/>
+                    <Button Name="btnSelectAll" Click="BtnSelectAll_Click" Content="显示全部" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="446,32,0,0" Grid.Column="3"/>
+                    <ListView Margin="29,218,792,163.2" Name="lvwYaofang" Grid.ColumnSpan="4">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="序号"     Width="80" DisplayMemberBinding="{Binding Path=c1}"/>
+                                <GridViewColumn Header="药品名称" Width="80" DisplayMemberBinding="{Binding Path=c2}"/>
+                                <GridViewColumn Header="规格"     Width="80" DisplayMemberBinding="{Binding Path=c3}"/>
+                                <GridViewColumn Header="剂型"     Width="80" DisplayMemberBinding="{Binding Path=c4}"/>
+                                <GridViewColumn Header="售价"     Width="80" DisplayMemberBinding="{Binding Path=c5}"/>
+                                <GridViewColumn Header="病功效"   Width="80" DisplayMemberBinding="{Binding Path=c6}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView Margin="164,80,40,163.2" Name="lvwSelect" MouseDoubleClick="LvwSelect_MouseDoubleClick" Grid.Column="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="序号"     Width="100" DisplayMemberBinding="{Binding Path=c1}"/>
+                                <GridViewColumn Header="药品名称" Width="130" DisplayMemberBinding="{Binding Path=c2}"/>
+                                <GridViewColumn Header="规格"     Width="100" DisplayMemberBinding="{Binding Path=c3}"/>
+                                <GridViewColumn Header="剂型"     Width="100" DisplayMemberBinding="{Binding Path=c4}"/>
+                                <GridViewColumn Header="售价"     Width="100" DisplayMemberBinding="{Binding Path=c5}"/>
+                                <GridViewColumn Header="病功效"   Width="200" DisplayMemberBinding="{Binding Path=c6}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="医嘱" FontFamily="黑体" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158.2,413,0,0" Grid.Column="2"/>
+                    <Label Content="中药禁忌和用法"  FontFamily="黑体" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,413,0,0" Grid.Column="3"/>
+                    <TextBox Name="txtYizhu" HorizontalAlignment="Left" Height="96" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="535" Margin="29,451,0,0" Grid.ColumnSpan="4"/>
+                    <TextBox Name="txtJinji" HorizontalAlignment="Left" Height="96" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="572" Margin="164,451,0,0" Grid.Column="3"/>
+                    <Button Content="药物禁忌" Name="btnTaboo" Click="BtnTaboo_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="784,451,0,0" Height="44" Grid.Column="3"/>
+                    <Button Content="服药用法" Name="btnUsage" Click="BtnUsage_Click" VerticalAlignment="Top" Margin="784,505,38,0" Height="44" Grid.Column="3"/>
+                    <ListBox Name="listBoxTaboo" SelectionChanged="ListBoxTaboo_SelectionChanged" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="217" Margin="519,451,0,0" Grid.Column="3">
+                        <ListBoxItem Content="忌辛辣"/>
+                        <ListBoxItem Content="忌烟酒"/>
+                        <ListBoxItem Content="忌油腻"/>
+                        <ListBoxItem Content="忌熬夜"/>
+                    </ListBox>
+                    <ListBox Name="listBoxUsage" SelectionChanged="ListBoxUsage_SelectionChanged" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="218" Margin="166,474,0,0" Grid.Column="3">
+                        <ListBoxItem Content="适宜开水冲服"/>
+                        <ListBoxItem Content="适宜早中晚服用"/>
+                        <ListBoxItem Content="适宜饭前服用"/>
+                        <ListBoxItem Content="一天三次"/>
+                        <ListBoxItem Content="一天两次"/>
+                        <ListBoxItem Content="一天一次"/>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="开西药">
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Images\tab1.png"/>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="128*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="1162*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="日期" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,31,0,0" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Label Content="病案号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,30,0,0" RenderTransformOrigin="0.304,0.6" Grid.Column="5"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="69,31,0,0" Grid.Column="5"/>
+                    <Label Content="处方号" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.5,2.4" Margin="180,31,0,0" Grid.Column="5"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="93" Margin="231,30,0,0" Grid.Column="5"/>
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="35,30,0,0" Width="107" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <Label Content="姓名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,75,0,0" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox Name="textBox23" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107" Margin="35,75,0,0" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <Label Content="年龄" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,109,0,0" Grid.Column="5"/>
+                    <TextBox Name="textBox19" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69" Margin="69,109,0,0" Grid.Column="5"/>
+                    <Label Content="住址" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,139,0,0" RenderTransformOrigin="0.382,1.48" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox Name="textBox21" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Margin="35,139,0,0" Grid.Column="3" Grid.ColumnSpan="3"/>
+                    <Label Content="服药天数" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,137,0,0" Grid.Column="5"/>
+                    <TextBox Name="txtCountDay2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113" Margin="152,139,0,0" Grid.Column="5"/>
+                    <Label Content="性别" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,109,0,0" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox Name="textBox20" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86" Margin="35,109,0,0" Grid.Column="3"/>
+                    <Label Content="初复诊" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,71,0,0" Grid.Column="5"/>
+                    <ComboBox Name="comboBox2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="69,75,0,0" Grid.Column="5">
+                        <ComboBoxItem Content="初诊"/>
+                        <ComboBoxItem Content="复诊"/>
+                    </ComboBox>
+                    <Button Content="删除" Name="button4" Click="Button4_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="114,181,0,0" RenderTransformOrigin="0.84,0.368" Grid.Column="5"/>
+                    <Label Content="关键词搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="402,30,0,0" Grid.Column="5"/>
+                    <TextBox Name="txtSelect2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" Margin="477,31,0,0" Grid.Column="5"/>
+                    <Button Name="button6" Click="Button6_Click" Content="显示全部" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="683,32,0,0" Grid.Column="5"/>
+                    <ListView Margin="0,218,792,163" Name="lvwYaofang2" Grid.Column="2" Grid.ColumnSpan="4">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="序号"     Width="80" DisplayMemberBinding="{Binding Path=c1}"/>
+                                <GridViewColumn Header="药品名称" Width="80" DisplayMemberBinding="{Binding Path=c2}"/>
+                                <GridViewColumn Header="规格"     Width="80" DisplayMemberBinding="{Binding Path=c3}"/>
+                                <GridViewColumn Header="剂型"     Width="80" DisplayMemberBinding="{Binding Path=c4}"/>
+                                <GridViewColumn Header="售价"     Width="80" DisplayMemberBinding="{Binding Path=c5}"/>
+                                <GridViewColumn Header="病功效"   Width="80" DisplayMemberBinding="{Binding Path=c6}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView Margin="402,80,40,163" Name="lvwSelect2" MouseDoubleClick="LvwSelect2_MouseDoubleClick" Grid.Column="5">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="序号"     Width="100" DisplayMemberBinding="{Binding Path=c1}"/>
+                                <GridViewColumn Header="药品名称" Width="130" DisplayMemberBinding="{Binding Path=c2}"/>
+                                <GridViewColumn Header="规格"     Width="100" DisplayMemberBinding="{Binding Path=c3}"/>
+                                <GridViewColumn Header="剂型"     Width="100" DisplayMemberBinding="{Binding Path=c4}"/>
+                                <GridViewColumn Header="售价"     Width="100" DisplayMemberBinding="{Binding Path=c5}"/>
+                                <GridViewColumn Header="病功效"   Width="200" DisplayMemberBinding="{Binding Path=c6}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="医嘱" FontFamily="黑体" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,413,0,0" Grid.Column="5"/>
+                    <Label Content="西药禁忌和用法"  FontFamily="黑体" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608,413,0,0" Grid.Column="5"/>
+                    <TextBox Name="txtYizhu2"  HorizontalAlignment="Left" Height="96" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="535" Margin="0,451,0,0" Grid.Column="2" Grid.ColumnSpan="4"/>
+                    <TextBox Name="txtJinji2" HorizontalAlignment="Left" Height="101" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="576" Margin="402,446,0,0" Grid.Column="5"/>
+                    <Button Content="药物禁忌" Name="button3" Click="Button3_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="1022,446,0,0" Height="44" Grid.Column="5"/>
+                    <Button Content="服药用法" Name="button1" Click="Button1_Click" VerticalAlignment="Top" Margin="1022,503,38,0" Height="44" Grid.Column="5"/>
+                    <ListBox Name="listBox3" SelectionChanged="ListBox3_SelectionChanged" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="217" Margin="761,446,0,0" Grid.Column="5" RenderTransformOrigin="0.491,0.368">
+                        <ListBoxItem Content="忌辛辣"/>
+                        <ListBoxItem Content="忌烟酒"/>
+                        <ListBoxItem Content="忌油腻"/>
+                        <ListBoxItem Content="忌熬夜"/>
+                    </ListBox>
+                    <ListBox Name="listBox4" SelectionChanged="ListBox4_SelectionChanged" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="217" Margin="402,470,0,0" Grid.Column="5">
+                        <ListBoxItem Content="适宜开水冲服"/>
+                        <ListBoxItem Content="适宜早中晚服用"/>
+                        <ListBoxItem Content="适宜饭前服用"/>
+                        <ListBoxItem Content="一天三次"/>
+                        <ListBoxItem Content="一天两次"/>
+                        <ListBoxItem Content="一天一次"/>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

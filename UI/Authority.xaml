@@ -1,0 +1,242 @@
+﻿<Window x:Class="UI.Authority"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="权限管理" Height="600" Width="850">
+    <Grid>
+        <StackPanel Width="240" Margin="-550,0,0,0">
+            <StackPanel Margin="10,10,0,0" Height="230" DockPanel.Dock="Left">
+                <Label Content="权限类型" Height="25"/>
+                <ListView Name="listView1" Height="190" Width="240" 
+                      Margin="-15,0,0,0" SelectionChanged="listView1_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="类型名称" Width="160" DisplayMemberBinding="{Binding Path=c1}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="MenuAdd" Header="添加类型" />
+                        <MenuItem Name="MenuDel" Header="删除类型" Click="MenuDel_Click"/>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+            </StackPanel>
+            <StackPanel Margin="10,-10,0,0" Height="300" DockPanel.Dock="Left">
+                <Label Content="员工权限" Height="25"/>
+                <ListView Name="listView2" Height="270" Width="240"
+                          Margin="-15,0,0,0" SelectionChanged="listView2_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="员工用户名" Width="79" DisplayMemberBinding="{Binding Path=c1}" />
+                            <GridViewColumn Header="员工姓名"   Width="78" DisplayMemberBinding="{Binding Path=c2}"/>
+                            <GridViewColumn Header="员工类型"   Width="78" DisplayMemberBinding="{Binding Path=c3}"/>
+                        </GridView>
+                    
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="GroupBox">
+                    <Setter Property="Width" Value="520"/>
+                    <Setter Property="Height" Value="78"/>
+                    <Setter Property="Margin" Value="250,15,0,0"/>
+                    <Setter Property="BorderBrush" Value="Aqua"/>
+                </Style>
+            </StackPanel.Resources>
+            <GroupBox Header="类型">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="类型名称：" Height="25"
+                           Margin="50,0,0,0"/>
+                    <TextBox Name="textBox1" Height="25" Width="150" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="用户">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="用户类型：" Height="25"
+                           Margin="15,0,0,0"/>
+                    <TextBox Name="textBox2" Height="25" Width="100"/>
+                    <Label Content="用户名：" Height="25" Margin="20,0,0,0"/>
+                    <TextBox Name="textBox3" Height="25" Width="110"/>
+                    <CheckBox Name="checkBox46" Content="全选" Height="23" Width="95"
+                              Margin="20,5,0,0" VerticalAlignment="Center"
+                              Checked="CheckBox46_Checked" Unchecked="CheckBox46_Unchecked"
+                              FontSize="13"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel >
+            <GroupBox Height="150" Width="100" Margin="-180,225,0,0"
+                      Name="groupBox1">
+                <StackPanel Margin="0,4,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox1" Checked="CheckBox1_Checked"
+                              Unchecked="CheckBox1_Unchecked">门诊医生</CheckBox>
+                    <CheckBox Name="checkBox10">选病人</CheckBox>
+                    <CheckBox Name="checkBox11">写病历</CheckBox>
+                    <CheckBox Name="checkBox12">开中药</CheckBox>
+                    <CheckBox Name="checkBox14">开西药</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="CheckBox">
+                    <Setter Property="Height" Value="25"/>
+                    <Setter Property="Width" Value="80"/>
+                </Style>
+            </StackPanel.Resources>
+            <GroupBox Height="150" Width="180"  Margin="120,225,0,0"
+                      Name="groupBox2">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="0,4,0,0">
+                        <CheckBox Name="checkBox2" Checked="CheckBox2_Checked"
+                                  Unchecked="CheckBox2_Unchecked">系统管理</CheckBox>
+                        <CheckBox Name="checkBox9">挂号单设置</CheckBox>
+                        <CheckBox Name="checkBox13">住院单设置</CheckBox>
+                        <CheckBox Name="checkBox19">科室管理</CheckBox>
+                        <CheckBox Name="checkBox20">员工添加</CheckBox>
+                    </StackPanel>
+                    <StackPanel Margin="5,29,0,0">
+                        <CheckBox Name="checkBox15">门诊单设置</CheckBox>
+                        <CheckBox Name="checkBox16">数据库备份</CheckBox>
+                        <CheckBox Name="checkBox17">权限管理</CheckBox>
+                        <CheckBox Name="checkBox18">数据恢复</CheckBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <GroupBox Height="150" Width="100" Margin="420,225,0,0"
+                      Name="groupBox3">
+                <StackPanel Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox3" Checked="CheckBox3_Checked"
+                              Unchecked="CheckBox3_Unchecked">门诊管理</CheckBox>
+                    <CheckBox Name="checkBox21">病人挂号</CheckBox>
+                    <CheckBox Name="checkBox22">代办医疗卡</CheckBox>
+                    <CheckBox Name="checkBox23">退号</CheckBox>
+                    <CheckBox Name="checkBox24">挂号表查询</CheckBox>
+                    <CheckBox Name="checkBox25">医疗卡补办</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <GroupBox Height="150" Width="100" Margin="640,225,0,0"
+                      Name="groupBox4">
+                <StackPanel Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox4" Checked="CheckBox4_Checked"
+                              Unchecked="CheckBox4_Unchecked">财务管理</CheckBox>
+                    <CheckBox Name="checkBox26">营业统计</CheckBox>
+                    <CheckBox Name="checkBox27">员工管理</CheckBox>
+                    <CheckBox Name="checkBox28">工资分配</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <GroupBox Height="150" Width="100" Margin="-180,385,0,0"
+                      Name="groupBox5">
+                <StackPanel Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox5" Checked="CheckBox5_Checked"
+                              Unchecked="CheckBox5_Unchecked">药房管理</CheckBox>
+                    <CheckBox Name="checkBox29">查看捡药单</CheckBox>
+                    <CheckBox Name="checkBox30">查看已发药品</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="CheckBox">
+                    <Setter Property="Height" Value="25"/>
+                    <Setter Property="Width" Value="80"/>
+                </Style>
+            </StackPanel.Resources>
+            <GroupBox Height="150" Width="180"  Margin="120,385,0,0"
+                      Name="groupBox6">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="0,4,0,0">
+                        <CheckBox Name="checkBox6" Checked="CheckBox6_Checked"
+                                  Unchecked="CheckBox6_Unchecked">住院管理</CheckBox>
+                        <CheckBox Name="checkBox31">查看病房</CheckBox>
+                        <CheckBox Name="checkBox33">住院登记</CheckBox>
+                        <CheckBox Name="checkBox35">查找病人</CheckBox>
+                        <CheckBox Name="checkBox37">添加</CheckBox>
+                        <CheckBox Name="checkBox39">出院结算</CheckBox>
+                    </StackPanel>
+                    <StackPanel Margin="5,29,0,0">
+                        <CheckBox Name="checkBox32">病房添加</CheckBox>
+                        <CheckBox Name="checkBox34">交款查看</CheckBox>
+                        <CheckBox Name="checkBox36">费用记账</CheckBox>
+                        <CheckBox Name="checkBox38">删除</CheckBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <GroupBox Height="150" Width="100" Margin="420,385,0,0"
+                      Name="groupBox7">
+                <StackPanel Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox7" Checked="CheckBox7_Checked"
+                              Unchecked="CheckBox7_Unchecked">门诊收费</CheckBox>
+                    <CheckBox Name="checkBox40">查找</CheckBox>
+                    <CheckBox Name="checkBox41">门诊结账</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <GroupBox Height="150" Width="100" Margin="640,385,0,0"
+                      Name="groupBox8">
+                <StackPanel Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Width" Value="80"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox Name="checkBox8" Checked="CheckBox8_Checked"
+                              Unchecked="CheckBox8_Unchecked">药库管理</CheckBox>
+                    <CheckBox Name="checkBox42">药品入库</CheckBox>
+                    <CheckBox Name="checkBox43">药品出库</CheckBox>
+                    <CheckBox Name="checkBox44">药品查看</CheckBox>
+                    <CheckBox Name="checkBox45">药品报警</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <Button Name="btnSave" Height="22" Width="80" 
+                Margin="700,530,0,0"
+                Click="btnSave_Click">保存</Button>
+    </Grid>
+</Window>

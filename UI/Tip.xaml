@@ -1,0 +1,26 @@
+﻿<Window x:Class="UI.Tip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" MouseMove="Window_MouseMove"
+        Title="系统提示" Height="220" Width="350">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="Images\tip.png" Stretch="None" />
+    </Window.Background>
+    <Grid >
+        <!--<Image Source="Images\tip.png" Stretch="Fill"/>-->
+        <Label Name="lblCaption" Content="系统提示" Margin="10" 
+               FontFamily="宋体-方正超大字符集" Foreground="White"
+               FontSize="16"/>
+        <TextBlock Name="tipShow"  Width="210" Height="30" FontSize="16" Foreground="Aqua"
+                 Background="Transparent" 
+                 VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Content="确定" 
+                Height="22" Width="70" 
+                Margin="0,130,0,0" Click="Button_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="UI.Drugstore"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1360"
+      Title="Drugstore" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" >
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="75"/>
+                    <Setter Property="Width" Value="68"/>
+                    <Setter Property="Margin" Value="0,100,0,0"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <EventSetter Event="Click" Handler="Button_Click"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Name="btn1">
+                <Image Source="Images\jianyaodan.png" Stretch="UniformToFill"
+                       Name="img1"/>
+            </Button>
+            <Label Content="查看检药单" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                   Height="55" Width="128" FontSize="20" FontFamily="楷体" Foreground="MidnightBlue"/>
+            <Button Name="btn2">
+                <Image Source="Images\yifayao.png" Stretch="UniformToFill"
+                       Name="img2"/>
+            </Button>
+            <Label Content="查看已发药品" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                   Height="55" Width="128" FontSize="20" FontFamily="楷体" Foreground="MidnightBlue"/>
+        </StackPanel>
+        <Frame NavigationUIVisibility="Hidden" Grid.Column="1"
+               Name="drugFrame">
+            
+        </Frame>
+    </Grid>
+</Page>

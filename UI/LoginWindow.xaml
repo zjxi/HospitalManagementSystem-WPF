@@ -1,0 +1,61 @@
+﻿<Window x:Class="UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI" 
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" MouseMove="Window_MouseMove"
+        Title="登陆界面" Height="484" Width="775" Icon="Images\Logo.png">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Images\LoginImage.png"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Image Width="65" Margin="120,75,10,10" Source="Images\Logo.png" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Name="labelSys" Content="医疗信息管理系统" Width="200" Height="40" 
+                   FontSize="22" FontFamily="宋体-方正超大字符集" Foreground="White"
+                   Margin="0,90,10,10" VerticalAlignment="Top" ToolTip="当前登陆界面"/>
+            <Label Name="labelUserName" Content="用户名：" Width="80" Height="30" 
+                   FontSize="19" Foreground="White" FontFamily="宋体"
+                   Margin="-160,-60,0,0" HorizontalAlignment="Left"/>
+            <Label Name="labelPwd" Content="密  码：" Width="80" Height="30" 
+                   FontSize="19" Foreground="White" FontFamily="宋体"
+                   Margin="-160,55,0,0" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="txtBoxUserName" Width="190" Height="25" 
+                     VerticalContentAlignment="Center"  FontSize="16" FontFamily="宋体"
+                     Margin="100,199,10,10" VerticalAlignment="Center"
+                     TextChanged="txtBoxUserName_TextChanged"/>
+            <PasswordBox Name="txtBoxPwd" Width="190" Height="25" PasswordChar="*" FontFamily="宋体"
+                         VerticalContentAlignment="Center"  FontSize="16"
+                         Margin="100,25,10,10" VerticalAlignment="Center" 
+                         PasswordChanged="txtBoxPwd_PasswordChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="btnLogin"  FontSize="21" Width="90" Height="35" IsDefault="True"
+                    IsEnabled="True" BorderBrush="Transparent" Click="btnLogin_Click"
+                    Margin="250,200,0,0" VerticalAlignment="Center" Background="Transparent"
+                    MouseEnter="btnLogin_MouseEnter" MouseLeave="btnLogin_MouseLeave">
+                <Image Name="imgLogin" Source="Images\Login.png" Stretch="UniformToFill" />
+            </Button>
+            <Button Name="btnCancel" FontSize="21" Width="90" Height="35"
+                    IsEnabled="True" BorderBrush="Transparent" Click="btnCancel_Click"
+                    Margin="100,200,0,0"  Background="Transparent"
+                    MouseEnter="btnCancel_MouseEnter" MouseLeave="btnCancel_MouseLeave">
+                <Image Name="imgCancel" Source="Images\Cancel.png"  Stretch="UniformToFill" />
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <Label Name="userNameTip"  Margin="410,199,10,10"
+                   FontSize="15" FontFamily="宋体" Foreground="Red" Height="25" Width="120"
+                   HorizontalAlignment="Center" />
+            <Label Name="pwdTip"  Margin="410,25,10,10"
+                   FontSize="15" FontFamily="宋体" Foreground="Red" Height="25" Width="110"
+                   HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>

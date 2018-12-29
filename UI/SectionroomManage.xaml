@@ -1,0 +1,45 @@
+﻿<Window x:Class="UI.SectionroomManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="科室科别增加" Height="500" Width="650">
+    <Grid>
+        <Label Content="科别：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="343,26,0,0"/>
+        <Label Content="科别名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,75,0,0"/>
+        <TextBox Name="txtSname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="428,79,0,0"/>
+        <Label Content="科室地址：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,114,0,0"/>
+        <TextBox Name="txtSaddr" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="428,118,0,0"/>
+        <Label Content=" 挂 号 费：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,157,0,0"/>
+        <TextBox Name="txtSprice"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="428,159,0,0"/>
+        <Button Content="添加" Name="btnSecAdd" Click="BtnSecAdd_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="358,200,0,0" Height="28"/>
+        <Button Content="清除" Name="btnClear" Click="BtnClear_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="446,200,0,0" Height="28"/>
+        <Button Content="修改科室" Name="btnReviseSec" Click="BtnReviseSec_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="525,200,0,0" RenderTransformOrigin="0.26,0.684" Height="28"/>
+        <Label Content="病例：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="343,260,0,0"/>
+        <Label Content="科别：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,294,0,0"/>
+        <ComboBox Name="cboSectionRoom" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="428,298,0,0"/>
+        <Label Content="名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,328,0,0"/>
+        <TextBox Name="txtSonName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="428,328,0,0"/>
+        <Button Content="添加" Name="btnCaseAdd" Click="BtnCaseAdd_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Margin="358,378,0,0" Height="28"/>
+        <Button Content="删除" Name="btnCaseDel" Click="BtnCaseDel_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Margin="446,378,0,0" Height="28"/>
+        <Button Content="取消" Name="btnCancel" Click="BtnCancel_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Margin="536,378,0,0" Height="28"/>
+        <TreeView Name="treeView1" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="271" Margin="28,26,0,0"
+                  SelectedItemChanged="TreeView1_SelectedItemChanged">
+            <TreeView.Resources>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="FontFamily" Value="楷体"/>
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+            </TreeView.Resources>
+            <!--<TreeViewItem TabIndex="0" >fasfafs</TreeViewItem>
+            <TreeViewItem TabIndex="0">fasfafs</TreeViewItem>
+            <TreeViewItem TabIndex="0">fasfafs</TreeViewItem>
+            <TreeViewItem TabIndex="0">fasfafs</TreeViewItem>
+            <TreeViewItem TabIndex="0">fasfafs</TreeViewItem>
+            <TreeViewItem TabIndex="0">fasfafs</TreeViewItem>-->
+        </TreeView>
+
+    </Grid>
+</Window>

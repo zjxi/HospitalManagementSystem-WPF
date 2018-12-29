@@ -1,0 +1,50 @@
+﻿<Page x:Class="UI.MedicinePage3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="MedicinePage3" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <EventSetter Event="Click" Handler="Button_Click"/>
+            </Style>
+        </Grid.Resources>
+        <Label Content="药品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,80,0,0" RenderTransformOrigin="0.54,-0.93"/>
+        <TextBox Name="txtDname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="258,82,0,0"/>
+        <Button Content="查找" Name="btnFind"  VerticalAlignment="Top" Margin="418,80,183,0" Height="22" RenderTransformOrigin="0.767,0.559"/>
+        <Button Content="药品出库" Name="btnExport" VerticalAlignment="Top" Margin="515,81,0,0" RenderTransformOrigin="2.224,0.51" Height="21" HorizontalAlignment="Left" Width="75"/>
+        <Button Content="清除" Name="btnShow"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="617,80,0,0" RenderTransformOrigin="2.224,0.51" Height="21" Grid.ColumnSpan="2"/>
+       
+        <ListView Name="lvwShow" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" 
+                  Width="1025" Margin="29,179,0,0" Grid.ColumnSpan="2"
+                  SelectionChanged="LvwShow_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="药品名称" Width="80" DisplayMemberBinding="{Binding Path=drugname}" />
+                    <GridViewColumn Header="药品类型" Width="80" DisplayMemberBinding="{Binding Path=type}"/>
+                    <GridViewColumn Header="费用名称" Width="80" DisplayMemberBinding="{Binding Path=fare}"/>
+                    <GridViewColumn Header="剂型" Width="80"     DisplayMemberBinding="{Binding Path=dosetype}"/>
+                    <GridViewColumn Header="规格" Width="80"     DisplayMemberBinding="{Binding Path=spec}"/>
+                    <GridViewColumn Header="进价" Width="80"     DisplayMemberBinding="{Binding Path=in_price}"/>
+                    <GridViewColumn Header="售价" Width="80"     DisplayMemberBinding="{Binding Path=sell_price}"/>
+                    <GridViewColumn Header="库存" Width="70"     DisplayMemberBinding="{Binding Path=stock}"/>
+                    <GridViewColumn Header="库存上限" Width="80" DisplayMemberBinding="{Binding Path=stockMax}"/>
+                    <GridViewColumn Header="库存下限" Width="80" DisplayMemberBinding="{Binding Path=stockMin}"/>
+                    <GridViewColumn Header="生产日期" Width="80" DisplayMemberBinding="{Binding Path=proDate}"/>
+                    <GridViewColumn Header="有效日期" Width="80" DisplayMemberBinding="{Binding Path=effDate}"/>
+                    <GridViewColumn Header="病功效" Width="80"   DisplayMemberBinding="{Binding Path=effect}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>

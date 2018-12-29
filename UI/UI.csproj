@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0399A38-54E1-4C57-8F0A-83D4ADBFEAF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Wpfz, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Wpfz\Wpfz.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Authority.xaml.cs">
+      <DependentUpon>Authority.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicCharge.xaml.cs">
+      <DependentUpon>ClinicCharge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicDoctor1.xaml.cs">
+      <DependentUpon>ClinicDoctor1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicManage.xaml.cs">
+      <DependentUpon>ClinicManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicManage_medicalCard.xaml.cs">
+      <DependentUpon>ClinicManage_medicalCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicManage_register.xaml.cs">
+      <DependentUpon>ClinicManage_register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Drugstore.xaml.cs">
+      <DependentUpon>Drugstore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrugstorePage1.xaml.cs">
+      <DependentUpon>DrugstorePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrugstorePage2.xaml.cs">
+      <DependentUpon>DrugstorePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Finance.xaml.cs">
+      <DependentUpon>Finance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_business.xaml.cs">
+      <DependentUpon>Finance_business.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_salary.xaml.cs">
+      <DependentUpon>Finance_salary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_staff.xaml.cs">
+      <DependentUpon>Finance_staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FullScreenManager\FullScreenManager.cs" />
+    <Compile Include="HospitalManage.xaml.cs">
+      <DependentUpon>HospitalManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_bookkeeping.xaml.cs">
+      <DependentUpon>HospitalManage_bookkeeping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_payment.xaml.cs">
+      <DependentUpon>HospitalManage_payment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_register.xaml.cs">
+      <DependentUpon>HospitalManage_register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_searchPatient.xaml.cs">
+      <DependentUpon>HospitalManage_searchPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_settlement.xaml.cs">
+      <DependentUpon>HospitalManage_settlement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_sickroomAdd.xaml.cs">
+      <DependentUpon>HospitalManage_sickroomAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManage_sickroomCheck.xaml.cs">
+      <DependentUpon>HospitalManage_sickroomCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListSettings.xaml.cs">
+      <DependentUpon>ListSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Medicine.xaml.cs">
+      <DependentUpon>Medicine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicinePage1.xaml.cs">
+      <DependentUpon>MedicinePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicinePage2.xaml.cs">
+      <DependentUpon>MedicinePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicinePage3.xaml.cs">
+      <DependentUpon>MedicinePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SectionroomManage.xaml.cs">
+      <DependentUpon>SectionroomManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SectionroomRevise.xaml.cs">
+      <DependentUpon>SectionroomRevise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAddition.xaml.cs">
+      <DependentUpon>StaffAddition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SystemManagement.xaml.cs">
+      <DependentUpon>SystemManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip.xaml.cs">
+      <DependentUpon>Tip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip2.xaml.cs">
+      <DependentUpon>Tip2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Authority.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinicCharge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinicDoctor1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinicManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinicManage_medicalCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClinicManage_register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Drugstore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrugstorePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrugstorePage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Finance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Finance_business.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Finance_salary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Finance_staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_bookkeeping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_searchPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_settlement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_sickroomAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HospitalManage_sickroomCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Medicine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicinePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicinePage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicinePage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SectionroomManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SectionroomRevise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StaffAddition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SystemManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tip2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainUnit.xaml.cs">
+      <DependentUpon>MainUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel.png" />
+    <Resource Include="Images\Login.png" />
+    <Resource Include="Images\LoginImage.png" />
+    <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f059f380-732c-44dd-b014-f60df1d92ad1}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{c7e40869-6b95-42ac-b015-1d688fcf1089}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\upperPanel.jpg" />
+    <Resource Include="Images\left.png" />
+    <Resource Include="Images\bottomPanel.jpg" />
+    <Resource Include="Images\right.png" />
+    <Resource Include="Images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CancelD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn+ .png" />
+    <Resource Include="Images\Btn-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\guahao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DBbackup.png" />
+    <Resource Include="Images\DBre.png" />
+    <Resource Include="Images\menzhen.png" />
+    <Resource Include="Images\zhuyuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\keshi.png" />
+    <Resource Include="Images\quanxian.png" />
+    <Resource Include="Images\yuangong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\zyd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ghd.jpg" />
+    <Resource Include="Images\mzd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\print.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\jianyaodan.png" />
+    <Resource Include="Images\yifayao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\jianyaodan2.png" />
+    <Resource Include="Images\yifayao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\drug_in.png" />
+    <Resource Include="Images\drug_in2.png" />
+    <Resource Include="Images\drug_out.png" />
+    <Resource Include="Images\drug_out2.png" />
+    <Resource Include="Images\drug_select.png" />
+    <Resource Include="Images\drug_select2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\deepPanel.jpg" />
+    <Resource Include="Images\gongzi1.png" />
+    <Resource Include="Images\gongzi2.png" />
+    <Resource Include="Images\lightPanel.jpg" />
+    <Resource Include="Images\yingye1.png" />
+    <Resource Include="Images\yingye2.png" />
+    <Resource Include="Images\yuangong1.png" />
+    <Resource Include="Images\yuangong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\xbr1.png" />
+    <Resource Include="Images\xbr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kxy.png" />
+    <Resource Include="Images\kzy.jpg" />
+    <Resource Include="Images\xbl1.png" />
+    <Resource Include="Images\xbl2.png" />
+    <Resource Include="Images\yao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\closeLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ky1.png" />
+    <Resource Include="Images\ky2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bl1.png" />
+    <Resource Include="Images\bl2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card1.png" />
+    <Resource Include="Images\card2.png" />
+    <Resource Include="Images\ylk1.png" />
+    <Resource Include="Images\ylk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bingren1.png" />
+    <Resource Include="Images\bingren2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hos1.png" />
+    <Resource Include="Images\hos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\empty.png" />
+    <Resource Include="Images\full.png" />
+    <Resource Include="Images\weixiu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\empty1.png" />
+    <Resource Include="Images\full1.png" />
+    <Resource Include="Images\weixiu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MAX.png" />
+    <Resource Include="Images\MIN.png" />
+    <Resource Include="Images\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hospitals.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="hospitals_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>hospitals.mdf</DependentUpon>
+    </Content>
+    <Resource Include="Images\tab1.png" />
+    <Resource Include="Images\tab2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

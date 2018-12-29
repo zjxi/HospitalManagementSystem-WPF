@@ -1,0 +1,61 @@
+﻿<Page x:Class="UI.Finance_business"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="Finance_business" Background="White">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal"  Height="120" Margin="10,10,0,0">
+            <GroupBox Header="部门" Height="100" Width="200" FontFamily="黑体" BorderBrush="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="checkBox1" Content="门诊部" Height="25" Width="60" Margin="20,0,0,0"
+                              Checked="CheckBox1_Checked" Unchecked="CheckBox1_Unchecked"/>
+                    <CheckBox Name="checkBox2" Content="住院部" Height="25" Width="60" Margin="20,0,0,0"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="科室"  Height="100" FontFamily="黑体" Margin="10,0,0,0" BorderBrush="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="checkBox3"  Height="25"  Margin="20,0,0,0"/>
+                    <ComboBox Name="comboBox1" Height="20" Width="60" Margin="5,-10,0,0"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="时间"  Height="100" Width="600" FontFamily="黑体" Margin="10,0,0,0" BorderBrush="Transparent">
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <RadioButton Name="radioButton5" Height="25">按日期</RadioButton>
+                    <DatePicker Name="dateTimePicker1" Height="25" Width="100" Margin="10,-10,0,0"></DatePicker>
+                    <Label Content="至" Height="25" Margin="0,-10,0,0"/>
+                    <DatePicker Name="dateTimePicker2" Height="25" Width="100" Margin="10,-10,0,0"></DatePicker>
+                    <RadioButton Name="rdo1" Height="25" Margin="10,0,0,0">本周</RadioButton>
+                    <RadioButton Name="radioButton1" Height="25" Margin="10,0,0,0">本月</RadioButton>
+                    <RadioButton Name="radioButton2" Height="25" Margin="10,0,0,0">本季</RadioButton>
+                    <RadioButton Name="radioButton3" Height="25" Margin="10,0,0,0">全年</RadioButton>
+                    <RadioButton Name="radioButton4" Height="25" Margin="10,0,0,0">所有</RadioButton>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <ListView Height="380" Width="930" Margin="19,30,139,0"
+                      x:Name="listView1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="卡号" Width="150"      DisplayMemberBinding="{Binding c1}"/>
+                        <GridViewColumn Header="科室" Width="150"      DisplayMemberBinding="{Binding c2}"/>
+                        <GridViewColumn Header="药品费用" Width="150"  DisplayMemberBinding="{Binding c3}"/>
+                        <GridViewColumn Header="住院费用" Width="150"  DisplayMemberBinding="{Binding c4}"/>
+                        <GridViewColumn Header="时间" Width="150"      DisplayMemberBinding="{Binding c5}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="住院营业额：" Margin="100,0,0,0"/>
+                <Label Content="：" Margin="10,0,0,0" Name="label3"/>
+                <Label Content="药品营业额：" Margin="100,0,0,0"/>
+                <Label Content="：" Margin="10,0,0,0" Name="label5"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,41 @@
+﻿<Page x:Class="UI.HospitalManage_sickroomAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1088"
+      Title="HospitalManage_sickroomAdd" Background="White">
+
+    <Grid Name="grid1">
+        
+        <Label Content="单个添加：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,32,0,0"/>
+        <Label Content="病房号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,66,0,0"/>
+        <TextBox Name="txtnum" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="115,68,0,0"/>
+        <Label Content="批量添加：" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.225,3.12" Margin="57,108,0,0"/>
+        <CheckBox  Name="checkBox1" Checked="CheckBox1_Checked" Unchecked="CheckBox1_Unchecked" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,115,0,0" RenderTransformOrigin="0.812,0.533" />
+        <Label Content="楼层" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,142,0,0"/>
+        <TextBox Name="txtlou1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Margin="96,144,0,0"/>
+        <Label Content="至" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="163,142,0,0"/>
+        <TextBox Name="txtlou2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Margin="190,144,0,0"/>
+        <Label Content="房号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,182,0,0"/>
+        <TextBox Name="txtfang1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Margin="96,184,0,0"/>
+        <Label Content="至" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="163,182,0,0"/>
+        <TextBox Name="txtfang2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Margin="190,184,0,0"/>
+        <Label Content="病房科室：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,238,0,0"/>
+        <ComboBox Name="cboKeshi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="132,242,0,0"/>
+        <Label Content="病房类型：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,285,0,0"/>
+        <ComboBox Name="cboType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="132,289,0,0">
+            <ComboBoxItem Content="普通病房"/>
+            <ComboBoxItem Content="重病房"/>
+        </ComboBox>
+        <Label Content="病床个数：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,341,0,0"/>
+        <TextBox Name="txtBFnum" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="132,343,0,0"/>
+        <Label Content="病房价格：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,387,0,0"/>
+        <TextBox Name="txtPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.75,2.783" Margin="132,391,0,0"/>
+        <Button Content="确定" Name="btnYes" Click="BtnYes_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="57,455,0,0"/>
+        <Button Content="清空" Name="btnDel" Click="BtnDel_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,455,0,0"/>
+
+    </Grid>
+</Page>
