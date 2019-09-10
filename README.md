@@ -1,3 +1,6 @@
+![License](https://img.shields.io/github/license/ElecRex/HospitalManagementSystem-WPF.svg)
+![.net](https://img.shields.io/badge/.NETFramework-4.6.1-blue.svg)
+
 ## Introduction | 项目基本介绍
 - 该系统具备常见医疗流程，并可以完成患者和医生信息的输入，存储，修改，查询，删除等功能。 每个医生都有自己的密码，有人可以更改数据，有人无法修改，只能查看。 同时，数据也有一定的维护，当患者突然生病时，医生可以通过IC卡及时了解患者的病情。 并给予一定的治疗，同时处方药银行也将根据医生的处方开处方，方便患者就医，吃药。
 ## Download | 下载项目
@@ -28,8 +31,21 @@ $ cd HospitalManagementSystem-WPF
   |
   |__Database
 ```
-
-## Exhibition | 界面展示及功能介绍
+## Database configuration | 数据库路径配置
+在```./UI/App.config```配置文件中的```appSettings```，设置已提供的数据库```hospitals.mdf```的连接路径,
+默认为相对路径
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+    </startup>
+  <appSettings>
+    <add key="strCon" value="server=(localdb)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=|DataDirectory|\hospitals.mdf" />
+  </appSettings>
+</configuration>
+```
+## Screenshot | 界面展示及功能简介
 
 ### 登陆界面
 
