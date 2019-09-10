@@ -31,11 +31,11 @@ $ cd HospitalManagementSystem-WPF
 
 ## Exhibit | 界面展示
 
-#### 登陆界面
+### 登陆界面
 
 ![LoginUI.png](./imgs/LoginUI.png)
 
-#### 系统管理
+### 系统管理
 
 ![SysManUI.png](./imgs/SysManUI.png)
 
@@ -59,7 +59,7 @@ $ cd HospitalManagementSystem-WPF
   
   ![AutManUI.png](./imgs/AutManUI.png)
 
-#### 门诊医生
+### 门诊医生
 
 - 选病人
   
@@ -73,7 +73,7 @@ $ cd HospitalManagementSystem-WPF
   
   ![DishDrugUI.png](./imgs/DishDrugUI.png)
 
-#### 门诊管理
+### 门诊管理
 
 - 病人挂号
   
@@ -83,11 +83,11 @@ $ cd HospitalManagementSystem-WPF
   
   ![CardRegUI.png](./imgs/CardRegUI.png)
 
-#### 门诊收费
+### 门诊收费
 
 ![ChargeUI.png](./imgs/ChargeUI.png)
 
-#### 住院管理
+### 住院管理
 
 - 病房查看
   
@@ -117,7 +117,7 @@ $ cd HospitalManagementSystem-WPF
   
   ![DischargSettlementUI.png](./imgs/DischargSettlementUI.png)
 
-#### 药房管理
+### 药房管理
 
 - 查看检药单
   
@@ -127,11 +127,11 @@ $ cd HospitalManagementSystem-WPF
   
   ![part6_2.png](./imgs/part6_2.png)
 
-#### 药库管理
+### 药库管理
 
 ![DrugstoreUI.png](./imgs/DrugstoreUI.png)
 
-#### 财务管理
+### 财务管理
 
 ![FinaManUI.png](./imgs/FinaManUI.png)
 
