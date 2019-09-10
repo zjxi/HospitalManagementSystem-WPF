@@ -34,7 +34,7 @@ $ cd HospitalManagementSystem-WPF
 ## Database configuration | 数据库路径配置
 在```./UI/App.config```配置文件中的```appSettings```，设置已提供的数据库```hospitals.mdf```的连接路径,
 默认为相对路径
-```
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <startup> 
