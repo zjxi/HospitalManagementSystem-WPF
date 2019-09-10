@@ -29,7 +29,7 @@ $ cd HospitalManagementSystem-WPF
   |__Database
 ```
 
-## Exhibit | 界面展示
+## Exhibition | 界面展示及功能介绍
 
 ### 登陆界面
 
