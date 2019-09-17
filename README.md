@@ -3,8 +3,8 @@
 
 ## Introduction | 项目基本介绍
 - 该系统具备常见医疗流程，并可以完成患者和医生信息的输入，存储，修改，查询，删除等功能。 每个医生都有自己的密码，有人可以更改数据，有人无法修改，只能查看。 同时，数据也有一定的维护，当患者突然生病时，医生可以通过IC卡及时了解患者的病情。 并给予一定的治疗，同时处方药银行也将根据医生的处方开处方，方便患者就医，吃药。
-## Download | 下载项目
 
+## Installation | 下载安装项目
 ```bash
 $ git clone https://github.com/ElecRex/HospitalManagementSystem-WPF.git
 $ cd HospitalManagementSystem-WPF
