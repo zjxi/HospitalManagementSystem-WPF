@@ -156,6 +156,7 @@ $ cd HospitalManagementSystem-WPF
 
 - Apache 2.0
 
-
+## Author
+- written by **xzj** @ 2018/12
 
 
