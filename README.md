@@ -50,7 +50,7 @@ $ cd HospitalManagementSystem-WPF
 
 ### 登陆界面
 
-![LoginUI.png](./imgs/LoginUI.png)
+![LoginUI.png](https://github.com/ElecRex/HospitalManagementSystem-WPF/raw/master/imgs/LoginUI.png)
 
 ### 系统管理
 
