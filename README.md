@@ -6,6 +6,7 @@
 - 默认管理员登陆用户名和密码均为```admin```
 
 若此项目对您有帮助，欢迎star和fork。作者开发不易，可以打赏一下，以便维持生计。
+![zanshang](./imgs/appreciation.jpg)
 
 
 ## Installation | 下载安装项目
