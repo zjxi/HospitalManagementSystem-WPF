@@ -57,8 +57,7 @@ $ cd HospitalManagementSystem-WPF
 ## Screenshot | 界面展示及功能简介
 
 ### 登陆界面
-
-![LoginUI.png](https://github.com/ElecRex/HospitalManagementSystem-WPF/raw/master/imgs/LoginUI.png)
+<p align="center"><img src="https://github.com/ElecRex/HospitalManagementSystem-WPF/raw/master/imgs/LoginUI.png" width="800" height="500" alt="" /></p>
 
 ### 系统管理
 
