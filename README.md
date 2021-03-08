@@ -10,7 +10,7 @@
 
 若此项目对您有帮助，欢迎star和fork。
 **作者开发不易，打赏给点底气，以便维持生计。**
-<p align="center"><img src="./imgs/appreciation.jpg" width="500" height="400" alt="" /></p>
+<p align="center"><img src="./imgs/appreciation.jpg" width="450" height="350" alt="" /></p>
 
 
 ## Installation | 下载安装项目
