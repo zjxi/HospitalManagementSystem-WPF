@@ -1,7 +1,6 @@
 ![License](https://img.shields.io/github/license/ElecRex/HospitalManagementSystem-WPF.svg)
 ![.net](https://img.shields.io/badge/.NETFramework-4.6.1-blue.svg)
-![platform](https://img.shields.io/badge/platform-win64-cyan.svg)
-![downloads](https://img.shields.io/github/downloads/zjxi/HospitalManagementSystem-WPF/total)
+![platform](https://img.shields.io/badge/platform-win64-red.svg)
 ![stars](https://img.shields.io/github/stars/zjxi/HospitalManagementSystem-WPF) 
 ![forks](https://img.shields.io/github/forks/zjxi/HospitalManagementSystem-WPF)
 
