@@ -6,7 +6,7 @@
 - 默认管理员登陆用户名和密码均为```admin```
 
 若此项目对您有帮助，欢迎star和fork。作者开发不易，可以打赏一下，以便维持生计。
-![QRcode](./imgs/appreciation.jpg)
+<p align="center"><img src="./imgs/appreciation.jpg" width="320" height="320" alt="" /></p>
 
 
 ## Installation | 下载安装项目
