@@ -10,23 +10,38 @@ using Model;
 namespace BLL
 {
     /// <summary>
-    /// 打印账单
+    /// Kelas dasar untuk operasi Cetak Tagihan
     /// </summary>
     public class BillPrintBLL
     {
-        BillPrintDAL billPrintDAL;
+        protected BillPrintDAL billPrintDAL;
 
+        public BillPrintBLL()
+        {
+            billPrintDAL = new BillPrintDAL();
+        }
+    }
+
+    /// <summary>
+    /// Kelas yang bertanggung jawab untuk menyimpan kontrol
+    /// </summary>
+    public class SaveControlBLL : BillPrintBLL
+    {
         public void SaveControl(List<MyControl> controls)
         {
-            billPrintDAL = new BillPrintDAL();
             billPrintDAL.SaveControl(controls);
         }
+    }
 
-
+    /// <summary>
+    /// Kelas yang bertanggung jawab untuk membaca kontrol
+    /// </summary>
+    public class ReadControlBLL : BillPrintBLL
+    {
         public DataTable ReadControl()
         {
-            billPrintDAL = new BillPrintDAL();
             return billPrintDAL.ReadControl();
         }
     }
 }
+
