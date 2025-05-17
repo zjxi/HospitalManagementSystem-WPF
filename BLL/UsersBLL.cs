@@ -8,19 +8,42 @@ using DAL;
 
 namespace BLL
 {
+    /// <summary>
+    /// Kelas dasar untuk operasi manajemen pengguna
+    /// </summary>
     public class UsersBLL
     {
-        public int Check(Users u)
+        // Kelas ini akan menjadi kelas dasar untuk operasi manajemen pengguna
+    }
+
+    /// <summary>
+    /// Kelas untuk memeriksa pengguna
+    /// </summary>
+    public class UserCheckBLL : UsersBLL
+    {
+        public int CheckUser(Users u)
         {
             return new UsersDAL().Chcek(u);
         }
+    }
 
-        public List<SectionRoom> Section()
+    /// <summary>
+    /// Kelas untuk memilih ruang bagian
+    /// </summary>
+    public class SectionRoomSelectBLL : UsersBLL
+    {
+        public List<SectionRoom> GetSectionRooms()
         {
             return new UsersDAL().p_SectionRoom_select();
         }
+    }
 
-        public string RegisterRew(Register r)
+    /// <summary>
+    /// Kelas untuk mendaftarkan ulang
+    /// </summary>
+    public class RegisterRewBLL : UsersBLL
+    {
+        public string Register(Register r)
         {
             return new RegisterDAL().RegistersDAL(r);
         }
