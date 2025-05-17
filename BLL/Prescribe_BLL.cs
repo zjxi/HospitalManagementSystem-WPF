@@ -8,40 +8,53 @@ using Model;
 
 namespace BLL
 {
+    /// <summary>
+    /// Kelas dasar untuk operasi manajemen resep
+    /// </summary>
     public class Prescribe_BLL
     {
-        /// <summary>
-        /// 添加病历
-        /// </summary>
-        /// <param name="bl"></param>
-        /// <returns></returns>
-        public string Bingli_Insert(Bingli bl)
+        // Kelas ini akan menjadi kelas dasar untuk operasi manajemen resep
+    }
+
+    /// <summary>
+    /// Kelas untuk menambahkan catatan medis
+    /// </summary>
+    public class BingliInsertBLL : Prescribe_BLL
+    {
+        public string InsertBingli(Bingli bl)
         {
             int re = new Prescribe_DAL().Bingli_Insert(bl);
             if (re == 0)
-                return "该病历已经存在";
+                return "Catatan medis tersebut sudah ada";
             else if (re == 1)
-                return "提交病历成功";
+                return "Berhasil menambahkan catatan medis";
             else
-                return "提交病历失败";
+                return "Gagal menambahkan catatan medis";
         }
+    }
 
-        /// <summary>
-        /// 添加药方
-        /// </summary>
-        /// <param name="ky"></param>
-        /// <returns></returns>
-        public string kaiyao_Insert(Kaiyao ky)
+    /// <summary>
+    /// Kelas untuk menambahkan resep obat
+    /// </summary>
+    public class KaiyaoInsertBLL : Prescribe_BLL
+    {
+        public string InsertKaiyao(Kaiyao ky)
         {
             int re = new Prescribe_DAL().kaiyao_Insert(ky);
             if (re == 0)
-                return "该药方已经存在";
+                return "Resep obat tersebut sudah ada";
             else if (re == 1)
-                return "提交药方成功";
+                return "Berhasil menambahkan resep obat";
             else
-                return "提交药方失败";
+                return "Gagal menambahkan resep obat";
         }
+    }
 
+    /// <summary>
+    /// Kelas untuk memilih semua kartu identitas
+    /// </summary>
+    public class IdCardSelectBLL : Prescribe_BLL
+    {
         public List<IdCard> SelectAll(int kid)
         {
             return new Prescribe_DAL().SelectAll(kid);
