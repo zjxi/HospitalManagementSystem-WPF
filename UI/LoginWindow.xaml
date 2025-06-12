@@ -29,11 +29,13 @@
             <TextBox Name="txtBoxUserName" Width="190" Height="25" 
                      VerticalContentAlignment="Center"  FontSize="16" FontFamily="宋体"
                      Margin="100,199,10,10" VerticalAlignment="Center"
-                     TextChanged="txtBoxUserName_TextChanged"/>
+                     TextChanged="txtBoxUserName_TextChanged"
+                     MouseEnter="txtBoxPwd_MouseDown" MouseLeave="txtBoxPwd_MouseLeave"/>
             <PasswordBox Name="txtBoxPwd" Width="190" Height="25" PasswordChar="*" FontFamily="宋体"
                          VerticalContentAlignment="Center"  FontSize="16"
                          Margin="100,25,10,10" VerticalAlignment="Center" 
-                         PasswordChanged="txtBoxPwd_PasswordChanged"/>
+                         PasswordChanged="txtBoxPwd_PasswordChanged"
+                         MouseEnter="txtBoxPwd_MouseDown" MouseLeave="txtBoxPwd_MouseLeave"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Name="btnLogin"  FontSize="21" Width="90" Height="35" IsDefault="True"
