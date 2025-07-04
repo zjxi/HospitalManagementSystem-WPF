@@ -138,5 +138,15 @@ namespace UI
             BitmapImage imagetemp = new BitmapImage(new Uri("\\Images\\Cancel.png", UriKind.Relative));
             imgCancel.Source = imagetemp;
         }
+
+        private void txtBoxPwd_MouseDown(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            this.MouseMove -= Window_MouseMove;
+        }
+
+        private void txtBoxPwd_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            this.MouseMove += Window_MouseMove;
+        }
     }
 }
